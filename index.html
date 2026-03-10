@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COGNI – The Thinking AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-glow"></div>
+  <div class="floating-grid"></div>
+
+  <section id="landing" class="landing active">
+    <div class="landing-card glass">
+      <h1>COGNI – The Thinking AI</h1>
+      <p>“An AI that helps you think, not replaces your thinking.”</p>
+      <button id="beginBtn" class="primary-btn">Begin Thinking</button>
+    </div>
+    <div class="landing-orb" aria-hidden="true"></div>
+  </section>
+
+  <main id="app" class="app hidden">
+    <aside class="left-panel glass">
+      <div class="avatar-wrap">
+        <canvas id="avatarCanvas"></canvas>
+        <div class="avatar-status" id="avatarStatus">Idle Awareness</div>
+      </div>
+
+      <div class="metrics">
+        <div class="metric"><span>Thinking Streak</span><strong id="streak">0</strong></div>
+        <div class="metric"><span>Insight Points</span><strong id="insightPoints">0</strong></div>
+        <div class="metric"><span>Curiosity Meter</span><strong id="curiosityMeter">20%</strong></div>
+      </div>
+
+      <div class="progress-card">
+        <div class="progress-title">
+          <span>Reflection Progress</span>
+          <span id="reflectionValue">10%</span>
+        </div>
+        <div class="progress-track"><div id="reflectionBar"></div></div>
+      </div>
+
+      <div class="voice-controls">
+        <button id="startListeningBtn">🎤 Start Listening</button>
+        <button id="stopListeningBtn">⏹ Stop Listening</button>
+        <button id="toggleVoiceBtn">🔊 Voice: ON</button>
+      </div>
+    </aside>
+
+    <section class="chat-panel glass">
+      <header class="chat-header">
+        <div>
+          <h2>COGNI Interface</h2>
+          <small>Agentic AI for cognitive independence</small>
+        </div>
+        <div class="modes">
+          <button id="thinkModeBtn" class="chip">THINK MODE</button>
+          <button id="askAnythingBtn" class="chip">Ask COGNI Anything</button>
+        </div>
+      </header>
+
+      <div class="category-tabs" id="categoryTabs"></div>
+      <div class="suggestions" id="suggestions"></div>
+
+      <div id="chatHistory" class="chat-history" aria-live="polite"></div>
+      <div id="typingIndicator" class="typing hidden">COGNI is thinking<span></span><span></span><span></span></div>
+
+      <div class="input-area">
+        <input id="userInput" type="text" placeholder="Share your thought..." autocomplete="off" />
+        <button id="voiceInputBtn" class="icon-btn" title="Voice input">🎙️</button>
+        <button id="sendBtn" class="primary-btn">Send</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r158/three.min.js"></script>
+  <script src="data/questions.js"></script>
+  <script src="avatar.js"></script>
+  <script src="voice.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
